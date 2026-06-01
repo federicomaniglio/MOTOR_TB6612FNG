@@ -3,6 +3,8 @@
 //
 // 01/06/2026 - Refactoring: rimosse le variabili legacy dei canali PWM per compatibilità con le API ESP32 V3.0+.
 //
+// 01/06/2026 - Refactoring: Rimosso il metodo superfluo nel costruttore per i motori in seguito alla rimozione delle variabili legacy
+//
 
 #ifndef MOTOR_TB6612FNG_TB6612FNGMOTORS_H
 #define MOTOR_TB6612FNG_TB6612FNGMOTORS_H
@@ -32,9 +34,6 @@ private:
 public:
     // Costruttore di default
     TB6612FNGmotors();
-
-    // Costruttore con pin personalizzati
-    TB6612FNGmotors(int pin_stby, int ain1, int ain2, int pwma, int bin1, int bin2, int pwmb);
 
     // Costruttore senza STBY
     TB6612FNGmotors(int ain1, int ain2, int pwma, int bin1, int bin2, int pwmb);

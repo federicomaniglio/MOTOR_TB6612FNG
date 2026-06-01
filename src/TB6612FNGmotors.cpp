@@ -5,6 +5,8 @@
 // 
 // 01/06/2026 - Refactoring: sostituiti le funzioni rimosse ledcSetup e ledcAttachPin con ledcAttach per la compatibilità con le API ESP32 V3.0+
 //
+// 01/06/2026 - Refactoring: Rimosso il metodo superfluo nel costruttore per i motori in seguito alla rimozione delle variabili legacy
+//
 #include <Arduino.h>
 
 #include "../include/TB6612FNGmotors.h"
@@ -25,14 +27,6 @@ void TB6612FNGmotors::initializePWM() const {
 
 // Costruttore di default
 TB6612FNGmotors::TB6612FNGmotors() {
-    initializePWM();
-    initializePins();
-}
-
-// Costruttore con pin personalizzati
-TB6612FNGmotors::TB6612FNGmotors(const int pin_stby, const int ain1, const int ain2, const int pwma,
-                                 const int bin1, const int bin2, const int pwmb)
-    : STBY(pin_stby), AIN1(ain1), AIN2(ain2), PWMA(pwma), BIN1(bin1), BIN2(bin2), PWMB(pwmb) {
     initializePWM();
     initializePins();
 }
