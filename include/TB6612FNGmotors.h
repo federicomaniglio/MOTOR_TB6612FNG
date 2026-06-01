@@ -1,6 +1,8 @@
 //
 // Created by federicomaniglio on 12/12/25.
 //
+// 01/06/2026 - Refactoring: rimosse le variabili legacy dei canali PWM per compatibilità con le API ESP32 V3.0+.
+//
 
 #ifndef MOTOR_TB6612FNG_TB6612FNGMOTORS_H
 #define MOTOR_TB6612FNG_TB6612FNGMOTORS_H
@@ -20,8 +22,6 @@ private:
     int PWMB = 16;
 
     // Parametri PWM
-    uint8_t PWM_CHANNEL_A = 0;
-    uint8_t PWM_CHANNEL_B = 1;
     uint32_t PWM_FREQ = 5000; // 5 KHz - frequenza standard per motori
     uint8_t PWM_RESOLUTION = 8; // 8 bit (0-255)
 
